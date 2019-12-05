@@ -1,4 +1,4 @@
-package cn.itcast.bigdata.hdfs;
+package hdfs;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

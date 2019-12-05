@@ -589,5 +589,10 @@
       <name>yarn.timeline-service.webapp.https.address</name>
       <value>node1.leap.com:8190</value>
     </property>
+
+      <property>
+          <name>mapreduce.framework.name</name>
+          <value>yarn</value>
+      </property>
     
   </configuration>

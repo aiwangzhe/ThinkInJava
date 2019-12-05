@@ -1,7 +1,5 @@
-package cn.itcast.bigdata.hdfs;
+package hdfs;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.URI;
 import java.util.Iterator;
 import java.util.Map.Entry;

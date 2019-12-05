@@ -143,7 +143,7 @@ public class Client {
 			String fileDstPath, String appId,
 			Map<String, LocalResource> localResources)
 			throws IllegalArgumentException, IOException {
-		fs.set
+
 		String suffix = "mytest" + "/" + appId + "/" + fileDstPath;
 		Path dst = new Path("/", suffix);
 		logger.info("hdfs copyFromLocalFile " + fileSrcPath + " =>" + dst);

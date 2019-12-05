@@ -5,7 +5,10 @@ import java.util.Iterator;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapred.JobConf;
+import org.apache.hadoop.mapred.OutputCollector;
+import org.apache.hadoop.mapred.Reducer;
+import org.apache.hadoop.mapred.Reporter;
 
 /**
  * KEYIN, VALUEIN 对应  mapper输出的KEYOUT,VALUEOUT类型对应
@@ -16,7 +19,7 @@ import org.apache.hadoop.mapreduce.Reducer;
  * @author
  *
  */
-public class WordcountReducer extends Reducer<Text, IntWritable, Text, IntWritable>{
+public class WordcountReducer implements Reducer<Text, IntWritable, Text, IntWritable> {
 
 	/**
 	 * <angelababy,1><angelababy,1><angelababy,1><angelababy,1><angelababy,1>
@@ -25,25 +28,22 @@ public class WordcountReducer extends Reducer<Text, IntWritable, Text, IntWritab
 	 * 入参key，是一组相同单词kv对的key
 	 */
 	@Override
-	protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
-
+	public void reduce(Text key, Iterator<IntWritable> values, OutputCollector<Text,
+			IntWritable> output, Reporter reporter) throws IOException{
 		int count=0;
-		/*Iterator<IntWritable> iterator = values.iterator();
-		while(iterator.hasNext()){
-			count += iterator.next().get();
-		}*/
-		
-		for(IntWritable value:values){
-		
-			count += value.get();
+		while(values.hasNext()){
+			count += values.next().get();
 		}
-		
-		context.write(key, new IntWritable(count));
-		
+		output.collect(key, new IntWritable(count));
 	}
-	
-	
-	
-	
-	
+
+	@Override
+	public void close() throws IOException {
+
+	}
+
+	@Override
+	public void configure(JobConf job) {
+
+	}
 }

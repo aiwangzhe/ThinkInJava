@@ -360,7 +360,7 @@ public class YARNRunner implements ClientProtocol {
 		long logSize = jobConf.getLong(MRJobConfig.MR_AM_LOG_KB, MRJobConfig.DEFAULT_MR_AM_LOG_KB) << 10;
 		String logLevel = jobConf.get(MRJobConfig.MR_AM_LOG_LEVEL, MRJobConfig.DEFAULT_MR_AM_LOG_LEVEL);
 		int numBackups = jobConf.getInt(MRJobConfig.MR_AM_LOG_BACKUPS, MRJobConfig.DEFAULT_MR_AM_LOG_BACKUPS);
-		MRApps.addLog4jSystemProperties(logLevel, logSize, numBackups, vargs, conf);
+		//MRApps.addLog4jSystemProperties(logLevel, logSize, numBackups, vargs, conf);
 
 		// Check for Java Lib Path usage in MAP and REDUCE configs
 		warnForJavaLibPath(conf.get(MRJobConfig.MAP_JAVA_OPTS, ""), "map", MRJobConfig.MAP_JAVA_OPTS, MRJobConfig.MAP_ENV);
