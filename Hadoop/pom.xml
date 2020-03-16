@@ -39,5 +39,47 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <includes>
+                        <include>**/*.class</include>
+                        <include>cn/itcast/bigdata/combinefile/SmallFilesToSequenceFileConverter.class</include>
+                    </includes>
+                    <excludes>
+                        <exclude>cn/**/*.class</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
 
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                <execution>
+                    <id>clean-rmdir</id>
+                    <phase>prepare-package</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>bash</executable>
+                        <workingDirectory>${basedir}</workingDirectory>
+                        <commandlineArgs>rm_classes.sh</commandlineArgs>
+                        <successCodes>
+                            <successCode>0</successCode>
+                            <successCode>1</successCode>
+                            <successCode>2</successCode>
+                        </successCodes>
+                    </configuration>
+                </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

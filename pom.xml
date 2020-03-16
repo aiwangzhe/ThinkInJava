@@ -10,6 +10,7 @@
     <version>1.0</version>
     <modules>
         <module>Hadoop</module>
+        <module>SpringBoot</module>
     </modules>
 
     <properties>
@@ -126,6 +127,8 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${jetty.version}</version>
             </plugin>
+
+
         </plugins>
     </build>
 </project>
