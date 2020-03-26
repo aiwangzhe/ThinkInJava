@@ -20,6 +20,7 @@ public class Main {
 //        }
         binaryToDecimal(100000000);
         System.out.println(hash(100000000));
+        HashMap
     }
 
     public static void binaryToDecimal(int n){
