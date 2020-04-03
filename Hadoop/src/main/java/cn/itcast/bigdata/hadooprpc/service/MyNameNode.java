@@ -1,8 +1,9 @@
 package cn.itcast.bigdata.hadooprpc.service;
 
 import cn.itcast.bigdata.hadooprpc.protocol.ClientNamenodeProtocol;
+import org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolPB;
 
-public class MyNameNode implements ClientNamenodeProtocol{
+public class MyNameNode implements ClientNamenodeProtocol {
 	
 	//模拟namenode的业务方法之一：查询元数据
 	@Override
