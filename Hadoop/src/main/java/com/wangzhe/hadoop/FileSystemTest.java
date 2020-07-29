@@ -13,6 +13,7 @@ public class FileSystemTest {
         Configuration conf = new Configuration();
         try {
             FileSystem fs = FileSystem.get(conf);
+            fs.create(new Path("/tmp/test.txt"));
             FileStatus[] fileStatuses = fs.listStatus(new Path("/"));
             for(FileStatus fileStatus : fileStatuses) {
                 System.out.println("status: " + fileStatus.getOwner());
