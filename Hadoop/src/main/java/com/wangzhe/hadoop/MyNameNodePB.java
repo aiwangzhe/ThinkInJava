@@ -43,15 +43,6 @@ public class MyNameNodePB implements ClientNamenodeProtocolPB {
         return null;
     }
 
-    @Override
-    public ClientNamenodeProtocolProtos.UnsetStoragePolicyResponseProto unsetStoragePolicy(RpcController controller, ClientNamenodeProtocolProtos.UnsetStoragePolicyRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ClientNamenodeProtocolProtos.GetStoragePolicyResponseProto getStoragePolicy(RpcController controller, ClientNamenodeProtocolProtos.GetStoragePolicyRequestProto request) throws ServiceException {
-        return null;
-    }
 
     @Override
     public ClientNamenodeProtocolProtos.GetStoragePoliciesResponseProto getStoragePolicies(RpcController controller, ClientNamenodeProtocolProtos.GetStoragePoliciesRequestProto request) throws ServiceException {
@@ -99,11 +90,6 @@ public class MyNameNodePB implements ClientNamenodeProtocolPB {
     }
 
     @Override
-    public ClientNamenodeProtocolProtos.TruncateResponseProto truncate(RpcController controller, ClientNamenodeProtocolProtos.TruncateRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
     public ClientNamenodeProtocolProtos.RenameResponseProto rename(RpcController controller, ClientNamenodeProtocolProtos.RenameRequestProto request) throws ServiceException {
         return null;
     }
@@ -140,16 +126,6 @@ public class MyNameNodePB implements ClientNamenodeProtocolPB {
 
     @Override
     public ClientNamenodeProtocolProtos.GetFsStatsResponseProto getFsStats(RpcController controller, ClientNamenodeProtocolProtos.GetFsStatusRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ClientNamenodeProtocolProtos.GetFsReplicatedBlockStatsResponseProto getFsReplicatedBlockStats(RpcController controller, ClientNamenodeProtocolProtos.GetFsReplicatedBlockStatsRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ClientNamenodeProtocolProtos.GetFsECBlockGroupStatsResponseProto getFsECBlockGroupStats(RpcController controller, ClientNamenodeProtocolProtos.GetFsECBlockGroupStatsRequestProto request) throws ServiceException {
         return null;
     }
 
@@ -199,11 +175,6 @@ public class MyNameNodePB implements ClientNamenodeProtocolPB {
     }
 
     @Override
-    public ClientNamenodeProtocolProtos.UpgradeStatusResponseProto upgradeStatus(RpcController controller, ClientNamenodeProtocolProtos.UpgradeStatusRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
     public ClientNamenodeProtocolProtos.RollingUpgradeResponseProto rollingUpgrade(RpcController controller, ClientNamenodeProtocolProtos.RollingUpgradeRequestProto request) throws ServiceException {
         return null;
     }
@@ -224,11 +195,6 @@ public class MyNameNodePB implements ClientNamenodeProtocolPB {
         System.out.println("I was invoked!");
 //        ClientNamenodeProtocolProtos.GetFileInfoResponseProto.newBuilder()
 //                .setFs()
-        return null;
-    }
-
-    @Override
-    public ClientNamenodeProtocolProtos.GetLocatedFileInfoResponseProto getLocatedFileInfo(RpcController controller, ClientNamenodeProtocolProtos.GetLocatedFileInfoRequestProto request) throws ServiceException {
         return null;
     }
 
@@ -378,11 +344,6 @@ public class MyNameNodePB implements ClientNamenodeProtocolPB {
     }
 
     @Override
-    public ClientNamenodeProtocolProtos.GetSnapshotDiffReportListingResponseProto getSnapshotDiffReportListing(RpcController controller, ClientNamenodeProtocolProtos.GetSnapshotDiffReportListingRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
     public ClientNamenodeProtocolProtos.IsFileClosedResponseProto isFileClosed(RpcController controller, ClientNamenodeProtocolProtos.IsFileClosedRequestProto request) throws ServiceException {
         return null;
     }
@@ -453,27 +414,7 @@ public class MyNameNodePB implements ClientNamenodeProtocolPB {
     }
 
     @Override
-    public EncryptionZonesProtos.ReencryptEncryptionZoneResponseProto reencryptEncryptionZone(RpcController controller, EncryptionZonesProtos.ReencryptEncryptionZoneRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public EncryptionZonesProtos.ListReencryptionStatusResponseProto listReencryptionStatus(RpcController controller, EncryptionZonesProtos.ListReencryptionStatusRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
     public EncryptionZonesProtos.GetEZForPathResponseProto getEZForPath(RpcController controller, EncryptionZonesProtos.GetEZForPathRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ErasureCodingProtos.SetErasureCodingPolicyResponseProto setErasureCodingPolicy(RpcController controller, ErasureCodingProtos.SetErasureCodingPolicyRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ErasureCodingProtos.UnsetErasureCodingPolicyResponseProto unsetErasureCodingPolicy(RpcController controller, ErasureCodingProtos.UnsetErasureCodingPolicyRequestProto request) throws ServiceException {
         return null;
     }
 
@@ -487,48 +428,4 @@ public class MyNameNodePB implements ClientNamenodeProtocolPB {
         return null;
     }
 
-    @Override
-    public ErasureCodingProtos.GetErasureCodingPoliciesResponseProto getErasureCodingPolicies(RpcController controller, ErasureCodingProtos.GetErasureCodingPoliciesRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ErasureCodingProtos.AddErasureCodingPoliciesResponseProto addErasureCodingPolicies(RpcController controller, ErasureCodingProtos.AddErasureCodingPoliciesRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ErasureCodingProtos.RemoveErasureCodingPolicyResponseProto removeErasureCodingPolicy(RpcController controller, ErasureCodingProtos.RemoveErasureCodingPolicyRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ErasureCodingProtos.EnableErasureCodingPolicyResponseProto enableErasureCodingPolicy(RpcController controller, ErasureCodingProtos.EnableErasureCodingPolicyRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ErasureCodingProtos.DisableErasureCodingPolicyResponseProto disableErasureCodingPolicy(RpcController controller, ErasureCodingProtos.DisableErasureCodingPolicyRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ErasureCodingProtos.GetErasureCodingPolicyResponseProto getErasureCodingPolicy(RpcController controller, ErasureCodingProtos.GetErasureCodingPolicyRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ErasureCodingProtos.GetErasureCodingCodecsResponseProto getErasureCodingCodecs(RpcController controller, ErasureCodingProtos.GetErasureCodingCodecsRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ClientNamenodeProtocolProtos.GetQuotaUsageResponseProto getQuotaUsage(RpcController controller, ClientNamenodeProtocolProtos.GetQuotaUsageRequestProto request) throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public ClientNamenodeProtocolProtos.ListOpenFilesResponseProto listOpenFiles(RpcController controller, ClientNamenodeProtocolProtos.ListOpenFilesRequestProto request) throws ServiceException {
-        return null;
-    }
 }
