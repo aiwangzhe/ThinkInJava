@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>MavenPlugin</artifactId>
+        <groupId>com.wangzhe</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>Execution</artifactId>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.wangzhe</groupId>
+                <artifactId>Plugins</artifactId>
+                <version>0.0.1</version>
+                <executions>
+                    <execution>
+                        <!-- 配置compile执行 -->
+                        <phase>compile</phase>
+                        <goals>
+                            <!-- 配置执行目标 -->
+                            <goal>reporter</goal>
+                        </goals>
+                        <configuration>
+                            <!-- className是要传入的值 -->
+                            <className>XXX</className>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
