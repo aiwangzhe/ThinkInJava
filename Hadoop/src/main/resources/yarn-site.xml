@@ -269,6 +269,11 @@
       <name>yarn.resourcemanager.am.max-attempts</name>
       <value>2</value>
     </property>
+
+      <property>
+          <name>yarn.client.failover-max-attempts</name>
+          <value>2</value>
+      </property>
     
     <property>
       <name>yarn.resourcemanager.bind-host</name>

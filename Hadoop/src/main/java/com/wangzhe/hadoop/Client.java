@@ -64,15 +64,19 @@ public class Client {
 //		yarnClient.submitApplication()
 
 		// 2. create an application
+		long currentTime = System.currentTimeMillis();
+		System.out.println("start request yarn, current time: " + currentTime);
 		YarnClientApplication app = yarnClient.createApplication();
+		long endTime = System.currentTimeMillis();
+		System.out.println("complete request yarn, current time: " + (endTime-currentTime));
 		app.getApplicationSubmissionContext()
 				.setKeepContainersAcrossApplicationAttempts(false);
 		app.getApplicationSubmissionContext().setApplicationName(
 				"truman.ApplicationMaster");
 
 		// 3. Set the app's resource usage, 100*10MB, 1vCPU
-				Resource capability = Resource.newInstance(100, 1);
-				app.getApplicationSubmissionContext().setResource(capability);
+		Resource capability = Resource.newInstance(100, 1);
+		app.getApplicationSubmissionContext().setResource(capability);
 
 
 		// 4. Set the app's localResource env and command by
