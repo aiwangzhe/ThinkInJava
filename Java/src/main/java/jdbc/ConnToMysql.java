@@ -14,7 +14,7 @@ public class ConnToMysql {
         try {
         Class.forName("com.mysql.jdbc.Driver");
         Connection conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-        conn.prepareStatement()
+        conn.prepareStatement("select 1");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
