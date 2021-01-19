@@ -1,0 +1,11 @@
+<configuration>
+    <property>
+        <name>zookeeper.znode.parent</name>
+        <value>/ams-hbase-unsecure</value>
+    </property>
+    <property>
+        <name>hbase.zookeeper.quorum</name>
+        <value>demo200.test.com,demo216.leaphd.com,demo217.leaphd.com</value>
+        <final>true</final>
+    </property>
+</configuration>

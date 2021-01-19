@@ -72,11 +72,12 @@ public class Client {
 		app.getApplicationSubmissionContext()
 				.setKeepContainersAcrossApplicationAttempts(false);
 		app.getApplicationSubmissionContext().setApplicationName(
-				"truman.ApplicationMaster");
+				"Test-ApplicationMaster");
 
 		// 3. Set the app's resource usage, 100*10MB, 1vCPU
-		Resource capability = Resource.newInstance(100, 1);
+		Resource capability = Resource.newInstance(1024, 1);
 		app.getApplicationSubmissionContext().setResource(capability);
+		//app.getApplicationSubmissionContext().setUnmanagedAM(true);
 
 
 		// 4. Set the app's localResource env and command by
@@ -106,7 +107,7 @@ public class Client {
 		//Add this jar file to hdfs
 		Map<String, LocalResource> localResources = new HashMap<String, LocalResource>();
 		FileSystem fs = FileSystem.get(conf);
-		String thisJar = "Hadoop/target/Hadoop-1.0-jar-with-dependencies.jar";
+		String thisJar = "Hadoop/target/Hadoop-1.0.jar";
 		String thisJarBaseName = FilenameUtils.getName(thisJar);
 		System.out.println("thisJar is " + thisJar);
 
@@ -137,11 +138,11 @@ public class Client {
 		List<String> commands = new LinkedList<String>();
 		StringBuilder command = new StringBuilder();
 		command.append(Environment.JAVA_HOME.$$()).append("/bin/java  ");
-		command.append("-Dlog4j.configuration=container-log4j.properties ");
+		command.append("-Dlog4j.configuration=task-log4j.properties ");
 		command.append("-Dyarn.app.container.log.dir=" + 
 				ApplicationConstants.LOG_DIR_EXPANSION_VAR + " ");
 		command.append("-Dyarn.app.container.log.filesize=0 ");
-		command.append("-Dhadoop.root.logger=INFO,CLA ");
+		//command.append("-Dhadoop.root.logger=INFO, ");
 		command.append("com.wangzhe.hadoop.ApplicationMaster ");
 		command.append("1>" + ApplicationConstants.LOG_DIR_EXPANSION_VAR + "/stdout ");
 		command.append("2>" + ApplicationConstants.LOG_DIR_EXPANSION_VAR + "/stderr ");
@@ -168,7 +169,6 @@ public class Client {
 				scFileStatus.getModificationTime());
 		System.out.println("upload hdfs file completed!");
 		localResources.put(fileDstPath, scRsrc);
-
 	}
 
 	private static void monitorApplicationReport(YarnClient yarnClient, ApplicationId appId) throws YarnException, IOException {

@@ -13,6 +13,7 @@
         <module>SpringBoot</module>
         <module>Java</module>
         <module>MavenPlugin</module>
+        <module>HBase</module>
     </modules>
 
     <properties>
