@@ -4,7 +4,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class SychonizedTest {
-        static Operation operation = new Operation();
+    private static Operation operation = new Operation();
     public static void main(String[] args) {
         for(int i = 0; i < 100; i++) {
             new Thread(new A()).start();
