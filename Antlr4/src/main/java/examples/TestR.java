@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/tpantlr2 for more book information.
 ***/
+package examples;
 import org.antlr.v4.runtime.*;
 
 public class TestR {
@@ -16,7 +17,7 @@ public class TestR {
 		RParser parser = new RParser(tokens);
 		parser.setBuildParseTree(true);
 		RuleContext tree = parser.prog();
-		tree.inspect(parser); // show in gui
+		//tree.(parser); // show in gui
 		//tree.save(parser, "/tmp/R.ps"); // Generate postscript
 		System.out.println(tree.toStringTree(parser));
 	}

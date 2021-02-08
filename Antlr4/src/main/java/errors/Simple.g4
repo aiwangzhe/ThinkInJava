@@ -4,20 +4,20 @@ prog:   classDef+ ; // match one or more class definitions
 
 classDef
     :   'class' ID '{' member+ '}' // a class has one or more members
-        {System.out.println("class "+$ID.text);}
+        {System.out.println("class "+$ID.getText());}
     ;
 
 member
     :   'int' ID ';'                       // field definition
-        {System.out.println("var "+$ID.text);}
+        {System.out.println("var "+$ID.getText());}
     |   'int' f=ID '(' ID ')' '{' stat '}' // method definition
-        {System.out.println("method: "+$f.text);}
+        {System.out.println("method: "+$f.getText());}
     ;
 
 stat:   expr ';'
-        {System.out.println("found expr: "+$stat.text);}
+        {System.out.println("found expr: "+$ctx.getText());}
     |   ID '=' expr ';'
-        {System.out.println("found assign: "+$stat.text);}
+        {System.out.println("found assign: "+$ctx.getText());}
     ;
 
 expr:   INT 

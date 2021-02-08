@@ -56,8 +56,8 @@ LETTER : [a-zA-Z] ;
 
 INT :   [0-9]+ ;
 
-WS  :   [ \t\n\r]+ -> channel(WHITESPACE) ;  // channel(1)
+WS  :   [ \t\n\r]+ -> channel(1) ;  // channel(1)
 
 SL_COMMENT
-    :   '//' .*? '\n' -> channel(COMMENTS)   // channel(2)
+    :   '//' .*? '\n' -> channel(2)   // channel(2)
     ;
