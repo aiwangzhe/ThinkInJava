@@ -7,6 +7,7 @@
  * Visit http://www.pragmaticprogrammer.com/titles/tpantlr2 for more book information.
 ***/
 /** Represents a variable definition (name,type) in symbol table */
+package listeners;
 public class VariableSymbol extends Symbol {
     public VariableSymbol(String name, Type type) { super(name, type); }
 }

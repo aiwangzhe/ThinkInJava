@@ -6,6 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/tpantlr2 for more book information.
 ***/
+package structures;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.Trees;
 
@@ -18,6 +19,6 @@ public class TestExpr_Tree {
         parser.setBuildParseTree(true);
         ParserRuleContext tree = parser.expr();
 	System.out.println(tree.toStringTree(parser));
-        tree.save(parser, "/tmp/t.ps"); // Generate postscript
+        //tree.(parser, "/tmp/t.ps"); // Generate postscript
     }
 }

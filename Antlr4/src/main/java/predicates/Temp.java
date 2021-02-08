@@ -6,4 +6,5 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/tpantlr2 for more book information.
 ***/
+package predicates;
 enum Temp { HOT, COLD }
