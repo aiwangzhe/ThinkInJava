@@ -10,36 +10,39 @@ public class QuickSort {
         }
     }
 
-    private static void sort(int a[], int l, int r) {
-        if (l >= r) return;
-        int p = partition(a, l, r);
-        sort(a, l, p - 1); //将分裂点前半部分数组排序
-        sort(a, p + 1, r); //将分裂点后半部分数组排序
+    private static void sort(int a[], int start, int end) {
+        if ( start < end) {
+            int split = splitIndex(a, start, end);
+            System.out.println("split: " + split);
+            sort(a, start, split - 1);
+            sort(a, split + 1, end);
+        }
     }
 
-    private static int partition(int a[], int l, int r) {
-        int value = a[l];
-        int k = l, m = r + 1;
-        while (true) {
-            while (a[++k] <= value) {
-                if (k == r) break;
+    public static int splitIndex(int a[], int start, int end) {
+        int val = a[start];
+        if (start >= end) {
+            return start;
+        }
+        int i = start;
+        int j = end;
+        while (i != j) {
+            while (a[j] > val && j > i) {
+                j--;
             }
-            while (a[--m] >= value) {
-                if (m == l) break;
+            while (a[i] <= val && i < j) {
+                i++;
             }
-            if(k >= m) {
-                a[l] = a[m];
-                a[m] = value;
-                for(int i = l ; i <= r; i++) {
-                    System.out.print(a[i] + " ");
-                }
-                System.out.println();
-                return m;
-            }else {
-                int t = a[k];
-                a[k] = a[m];
-                a[m] = t;
+            if(i < j) {
+                int tmp = a[i];
+                a[i] = a[j];
+                a[j] = tmp;
             }
         }
+        if (i != start) {
+            a[start] = a[i];
+            a[i] = val;
+        }
+        return i;
     }
 }
