@@ -28,4 +28,7 @@ public class ShortToUnicodeString extends ArrayInitBaseListener {
         int value = Integer.valueOf(ctx.INT().getText());
         System.out.printf("\\u%04x", value);
     }
+
+
+
 }
