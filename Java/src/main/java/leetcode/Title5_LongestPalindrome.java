@@ -9,10 +9,12 @@ public class Title5_LongestPalindrome {
     private static String longestPalindrome(String s) {
         int len = s.length();
         int maxLen = 0;
-        for(int i = 0 ; i < len ; i++) {
+        for (int i = 0; i < len; i++) {
             int highest = (len - i) / 2;
-            for(int left = highest; left > i; left--) {
+            for (int left = highest; left > i; left--) {
 
             }
         }
+        return "";
     }
+}
