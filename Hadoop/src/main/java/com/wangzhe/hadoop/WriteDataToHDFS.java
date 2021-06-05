@@ -10,18 +10,22 @@ import java.io.OutputStream;
 import java.net.URI;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Random;
 
 public class WriteDataToHDFS {
 
     public static void main(String[] args) throws IOException {
         Configuration conf = new Configuration();
 
-
-        DFSClient dfsClient = new DFSClient(URI.create("hdfs://node1:8020"), conf);
-        DFSOutputStream outputStream = (DFSOutputStream)
-                dfsClient.create("/user/hive/warehouse/test2.db/ratings_small/000000_1", true);
-        byte[] data = "2,4,4.0,1232323432".getBytes();
-        outputStream.write(data);
+        DFSClient dfsClient = new DFSClient(URI.create("hdfs://localhost:8020"), conf);
+        DFSOutputStream outputStream = (DFSOutputStream) dfsClient.create("/tmp/test1.txt", true);
+        byte[] data = new byte[512 * 127];
+        Random random = new Random();
+        for(int i = 0; i < data.length; i++) {
+            data[i] = (byte) random.nextInt(127);
+        }
+        outputStream.write("abcdefga".getBytes());
+        outputStream.flush();
         outputStream.close();
     }
 }
