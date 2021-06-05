@@ -18,7 +18,7 @@
     </modules>
 
     <properties>
-        <jetty.version>9.2.11.v20150529</jetty.version>
+        <jetty.version>9.3.27.v20190418</jetty.version>
     </properties>
 
     <dependencies>
