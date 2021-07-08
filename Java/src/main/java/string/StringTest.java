@@ -1,12 +1,23 @@
 package string;
 
+import utils.ShellCommandExecutor;
+
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class StringTest {
     public static void main(String[] args) {
-        String str = "\033[0;37;41m 安装程序已经在运行[PID：%s]，请等待完成！\033[0m";
-        str = str.replaceAll("\\033.*? ", "");
-        System.out.println("str: " + str);
+        long time = 1626451199;
+        Date date = new Date(time * 1000);
+        System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(date));
+
+        //ShellCommandExecutor.executeCmd(delCmd);
+        String addCmd = String.format( "sh -c echo '%s %s' >> /home/wangzhe/IdeaProjects/ThinkInJava/Java/test.txt",
+                "172.171.12", "host1");
+        System.out.println(addCmd);
+        ShellCommandExecutor.executeCmd(addCmd);
     }
 }
