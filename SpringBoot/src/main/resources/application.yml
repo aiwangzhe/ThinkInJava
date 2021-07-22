@@ -1,0 +1,5 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-name: mycluster
+      cluster-nodes: m1.leap.com:9200, m2.leap.com:9200
