@@ -28,21 +28,21 @@ import java.security.cert.X509Certificate;
 @Configuration
 public class EsConfig {
 
-    @Bean
-    Client client() {
-        Settings settings = Settings.builder()
-                .put("cluster.name", "elasticsearch")
-                .build();
-        TransportClient client = new PreBuiltTransportClient(settings);
-        //注意tcp的端口与http不同
-        try {
-            client.addTransportAddress(new TransportAddress(InetAddress.getByName("127.0.0.1")
-                    , 9300));
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-        return client;
-    }
+//    @Bean
+//    Client client() {
+//        Settings settings = Settings.builder()
+//                .put("cluster.name", "elasticsearch")
+//                .build();
+//        TransportClient client = new PreBuiltTransportClient(settings);
+//        //注意tcp的端口与http不同
+//        try {
+//            client.addTransportAddress(new TransportAddress(InetAddress.getByName("127.0.0.1")
+//                    , 9300));
+//        } catch (UnknownHostException e) {
+//            e.printStackTrace();
+//        }
+//        return client;
+//    }
 
     @Bean
     RestHighLevelClient higeLevelclient() {

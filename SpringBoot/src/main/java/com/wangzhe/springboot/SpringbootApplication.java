@@ -2,12 +2,14 @@ package com.wangzhe.springboot;
 
 import com.wangzhe.springboot.bean.People;
 import com.wangzhe.springboot.config.AppConfig;
+import com.wangzhe.springboot.jdbc.JDBCService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,15 +20,19 @@ import java.util.Arrays;
 
 @Controller
 @Configuration
+//@SpringBootApplication
+@ComponentScan("com.wangzhe.springboot")
 public class SpringbootApplication {
 
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context
-			= new AnnotationConfigApplicationContext();
-		context.register(AppConfig.class);
-		context.refresh();
-		SpringApplication.run(SpringbootApplication.class);
-		System.out.println(context.getBean(People.class));
+			= new AnnotationConfigApplicationContext(SpringbootApplication.class);
+		JDBCService jdbcService = (JDBCService) context.getBean("JDBCServiceImpl");
+		jdbcService.queryById(1);
+		//context.register(AppConfig.class);
+		//context.refresh();
+		//SpringApplication.run(SpringbootApplication.class);
+		//System.out.println(context.getBean(People.class));
 	}
 
 	@GetMapping("/hello")
